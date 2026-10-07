@@ -1,0 +1,45 @@
+name: sealist
+description: "SeaList — clear your mind, then go live your life. A calm todo, notes & reminder app."
+publish_to: "none"
+version: 1.2.0+3
+
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # Thai date/time pickers & Material strings (see app.dart).
+  flutter_localizations:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+
+  # State management — kept intentionally simple (ChangeNotifier + provider), no Firebase.
+  provider: ^6.1.2
+
+  # Date formatting / Thai locale for "วันพฤหัสบดีที่ 17 กันยายน" style dates.
+  # `any` is what the Flutter docs recommend when flutter_localizations is used:
+  # the Flutter SDK decides which intl version it is compatible with.
+  intl: any
+
+  # Typography: Mali (cute rounded Thai headings) + Sarabun (clean Thai body).
+  google_fonts: ^6.2.1
+
+  # Local notifications for reminders (no backend / no push server needed).
+  flutter_local_notifications: ^17.2.2
+  timezone: ^0.9.4
+
+  # v1.2: saves tasks/notes to the device as JSON, so closing the app (or
+  # the OS killing it) no longer wipes what the person typed.
+  shared_preferences: ^2.3.2
+
+  # Generates local-only ids for tasks/notes (no server, no accounts).
+  uuid: ^4.4.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
